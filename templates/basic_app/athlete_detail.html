@@ -1,0 +1,24 @@
+{% extends "basic_app/base.html" %}
+{% load static %}
+
+{% block body_block %}
+  <div class="container">
+    <div class="jumbotron">
+
+      <h1>Athelte Details</h1>
+      <p>Name : {{ athlete_detail.user.username}}</p>
+      <p>Country : {{ athlete_detail.country}}</p>
+      <p>sport : {{ athlete_detail.sport}}</p>
+      {% if athlete_detail.profile_pic %}
+        <p>Profile_pic:<img src="{{ athlete_detail.profile_pic.url}}"  alt="No profile_pic"> </p>
+      {% endif %}
+      <div>
+        <br>
+
+
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

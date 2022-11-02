@@ -1,0 +1,14 @@
+{% extends "basic_app/base.html" %}
+{% load static %}
+
+{% block body_block %}
+  <div class="container">
+    <div class="jumbotron">
+{% for i in booking_list %}
+  <h2><li><a href = "{% url 'basic_app:book_detail' pk=i.pk %}">{{i.Athlete}}</a></li></h2>
+{% endfor %}
+
+    </div>
+
+  </div>
+{% endblock %}

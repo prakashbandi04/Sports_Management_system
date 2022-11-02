@@ -1,0 +1,40 @@
+{% extends "basic_app/base.html" %}
+{% load static %}
+
+{% block body_block %}
+  <div class="container">
+    <div class="jumbotron">
+      {% if booked %}
+        <h1>Thank you for booking!</h1>
+      {% else %}
+        <h1>Register Here</h1>
+        <h3>Just fill out the form.</h3>
+
+        <form enctype="multipart/form-data" method="POST">
+          {% csrf_token %}
+          <div>
+            <label for="id_room_category">Room category:</label>
+             <select name="room_category" id="id_room_category">
+                <option value="Ac">Ac</option>
+                <option value="Non_Ac">Non-Ac</option>
+
+              </select>
+          </div>
+          <div class="input-div">
+            <label for = "id_check_in"> Check_in:</label>
+            <input type = "datetime-local" id = "id_check_in" name="check_in">
+          </div>
+          <div class="input-div">
+            <label for = "id_check_out"> Check_out:</label>
+            <input type = "datetime-local" id = "id_check_out" name="check_out">
+          </div>
+          <input type="submit" name="" value="Register">
+        </form>
+
+      {% endif %}
+
+    </div>
+
+  </div>
+
+{% endblock %}
